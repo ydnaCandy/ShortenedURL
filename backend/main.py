@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException, Depends
 from fastapi.responses import RedirectResponse
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, HttpUrl
 from sqlalchemy import create_engine, Column, Integer, String, DateTime
 from sqlalchemy.orm import sessionmaker, Session, declarative_base
@@ -7,6 +8,15 @@ from datetime import datetime, timedelta
 import string, random
 
 app = FastAPI()
+
+# CORSミドルウェアの追加
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # 開発中はすべてのオリジンを許可。本番は必要に応じて制限してください
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # --- DB設定 ---
 DATABASE_URL = "sqlite:///./urls.db"
