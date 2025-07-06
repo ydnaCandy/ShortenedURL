@@ -88,7 +88,6 @@ def redirect_to_url(code: str, db: Session = Depends(get_db)):
 
     return RedirectResponse(url.original_url)
 
-
 # --- 削除APIを追加 ---
 @app.delete("/del/{code}")
 def delete_url(code: str, db: Session = Depends(get_db)):
