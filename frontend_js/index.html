@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>URL短縮サービス</title>
+  </head>
+  <body>
+    <div>
+      <h1>URL短縮</h1>
+      <form id="shorten-form">
+        <label for="url">URL:</label>
+        <input type="url" id="url" required />
+        <button type="submit">短縮</button>
+      </form>
+      <p id="result"></p>
+    </div>
+    <div>
+      <button id="reset-btn" type="button">リセット</button>
+    </div>
+    <script src="./src/get_shorten.js"></script>
+  </body>
+</html>

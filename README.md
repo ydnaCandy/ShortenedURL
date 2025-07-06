@@ -3,6 +3,12 @@
 
 ## sample code
 
+### fastapiの起動
+
+```bash
+uvicorn main:app --reload
+```
+
 ### Powershell
 
 ```ps1
